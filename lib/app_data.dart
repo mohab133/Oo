@@ -54,17 +54,13 @@ const recentFiles = [
 ];
 const subjects = [
   SubjectItem('Database', '18 ملف', Icons.storage_rounded, Color(0xFF10B981)),
-  SubjectItem('Programming', '24 ملف', Icons.code_rounded, Color(0xFF3B82F6)),
-  SubjectItem('رياضة', '16 ملف', Icons.functions_rounded, Color(0xFFF59E0B)),
-  SubjectItem('Networks', '14 ملف', Icons.hub_outlined, Color(0xFF06B6D4))
+  SubjectItem('Programming', '24 ملف', Icons.code_rounded, Color(0xFF10B981)),
+  SubjectItem('رياضة', '16 ملف', Icons.functions_rounded, Color(0xFF10B981)),
+  SubjectItem('Networks', '14 ملف', Icons.hub_outlined, Color(0xFF10B981))
 ];
 const upcomingExams = [
   ExamItem('رياضة', 'Midterm', '10 سبتمبر', '10:00 ص', 'قاعة 204'),
   ExamItem('Database', 'Final', '18 سبتمبر', '12:00 م', 'قاعة 301')
-];
-const pastExams = [
-  ExamItem('Database', 'Final 2025', '2025', '', ''),
-  ExamItem('Programming', 'Midterm 2025', '2025', '', '')
 ];
 const sections = [
   SectionItem(

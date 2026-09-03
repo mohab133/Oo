@@ -36,9 +36,9 @@ class CollegeHubApp extends StatelessWidget {
         ),
         textTheme: const TextTheme(
           headlineSmall: TextStyle(
-              fontSize: 24, fontWeight: FontWeight.w800, color: primaryDark),
+              fontSize: 22, fontWeight: FontWeight.w800, color: primaryDark),
           titleLarge: TextStyle(
-              fontSize: 19, fontWeight: FontWeight.w800, color: primaryDark),
+              fontSize: 17, fontWeight: FontWeight.w800, color: primaryDark),
           bodyMedium: TextStyle(fontSize: 13, color: secondaryText),
         ),
       ),
@@ -103,7 +103,7 @@ void showNotifications(BuildContext context) {
       textDirection: TextDirection.rtl,
       child: SafeArea(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(20, 4, 20, 24),
+          padding: EdgeInsets.fromLTRB(20, 18, 20, 12),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             ListTile(
                 leading: Icon(Icons.description_outlined, color: primary),
@@ -138,7 +138,7 @@ class InfoPill extends StatelessWidget {
   const InfoPill(this.text, {super.key});
   @override
   Widget build(BuildContext context) => Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
       decoration: BoxDecoration(
           color: primary.withValues(alpha: .1),
           borderRadius: BorderRadius.circular(9)),
@@ -153,12 +153,12 @@ class SoftIcon extends StatelessWidget {
   const SoftIcon({super.key, required this.icon, required this.color});
   @override
   Widget build(BuildContext context) => Container(
-      width: 44,
-      height: 44,
+      width: 40,
+      height: 40,
       decoration: BoxDecoration(
           color: color.withValues(alpha: .11),
           borderRadius: BorderRadius.circular(12)),
-      child: Icon(icon, color: color, size: 23));
+      child: Icon(icon, color: color, size: 20));
 }
 
 class SearchBox extends StatelessWidget {
@@ -248,7 +248,7 @@ class SimpleCard extends StatelessWidget {
       color: surface,
       margin: EdgeInsets.zero,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
-      child: Padding(padding: const EdgeInsets.all(16), child: child));
+      child: Padding(padding: const EdgeInsets.all(14), child: child));
 }
 
 class DetailPage extends StatelessWidget {
