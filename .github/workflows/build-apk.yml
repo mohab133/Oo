@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build Android APK
     runs-on: ubuntu-latest
 
     steps:
@@ -21,9 +22,6 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Generate Android platform files
-        run: flutter create --platforms=android --project-name college_hub .
-
       - name: Install dependencies
         run: flutter pub get
 
@@ -35,3 +33,30 @@ jobs:
         with:
           name: college-hub-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+
+  build-ios:
+    name: Build iOS Archive
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.35.6'
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build iOS archive
+        run: flutter build ipa --release --no-codesign
+
+      - name: Upload iOS archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: college-hub-ios-archive
+          path: build/ios/archive/*.xcarchive
