@@ -35,12 +35,12 @@ class SectionItem {
 }
 
 const news = [
-  NewsItem('تم رفع Sheet جديد', 'Programming • Sheet 2 - Loops', 'منذ ساعتين',
-      Icons.description_outlined),
-  NewsItem('تعديل موعد محاضرة', 'Database إلى يوم الثلاثاء', 'منذ 4 ساعات',
+  NewsItem('تحديث خطة الأسبوع', 'تم تحديث محتوى الخطة الدراسية', 'منذ ساعتين',
       Icons.campaign_outlined),
-  NewsItem('تمت إضافة امتحان', 'رياضة • Midterm 10 سبتمبر', 'أمس',
-      Icons.event_outlined),
+  NewsItem('تنبيه مهم للطلاب', 'تأكد من متابعة مواعيد المحاضرات', 'منذ 4 ساعات',
+      Icons.info_outline_rounded),
+  NewsItem('إضافة محتوى جديد', 'تم تحسين تنظيم مكتبة الكلية', 'أمس',
+      Icons.auto_awesome_outlined),
 ];
 const tasks = [
   TaskItem(

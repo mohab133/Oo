@@ -85,13 +85,16 @@ class HomePage extends StatelessWidget {
                     const SoftIcon(
                         icon: Icons.assignment_outlined,
                         color: Color(0xFFF59E0B)),
-                    const Spacer(),
-                    InfoPill(item.subject)
+                    const SizedBox(width: 12),
+                    Expanded(
+                        child: Text(item.title,
+                            style: const TextStyle(
+                                fontWeight: FontWeight.w800, fontSize: 16))),
                   ]),
-                  const SizedBox(height: 12),
-                  Text(item.title,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w800, fontSize: 16)),
+                  const SizedBox(height: 10),
+                  Text(item.subject,
+                      style:
+                          const TextStyle(color: secondaryText, fontSize: 12)),
                   const Spacer(),
                   Text(item.due,
                       style:
@@ -120,7 +123,6 @@ class HomePage extends StatelessWidget {
                     Text('${item.subject} • ${item.type}',
                         style: const TextStyle(color: secondaryText))
                   ])),
-              const Icon(Icons.download_outlined, color: primary),
             ])),
           ),
         ),
