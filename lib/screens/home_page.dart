@@ -51,25 +51,25 @@ class HomePage extends StatelessWidget {
             title: 'آخر الأخبار',
             items: news,
             builder: (item) => SimpleCard(
-                child: Row(children: [
-              SoftIcon(icon: item.icon, color: primary),
-              const SizedBox(width: 14),
-              Expanded(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                    Text(item.title,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w800, fontSize: 16)),
-                    const SizedBox(height: 7),
-                    Text(item.detail,
-                        style: const TextStyle(color: secondaryText)),
-                    const SizedBox(height: 8),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                  Row(children: [
+                    SoftIcon(icon: item.icon, color: primary),
+                    const Spacer(),
                     Text(item.time,
-                        style: const TextStyle(
-                            color: secondaryText, fontSize: 11)),
-                  ])),
-            ])),
+                        style:
+                            const TextStyle(color: secondaryText, fontSize: 11))
+                  ]),
+                  const Spacer(),
+                  Text(item.title,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w800, fontSize: 16)),
+                  const SizedBox(height: 5),
+                  Text(item.detail,
+                      style:
+                          const TextStyle(color: secondaryText, fontSize: 12)),
+                ])),
           ),
         ),
         const SliverPadding(padding: EdgeInsets.only(top: 26)),
@@ -86,16 +86,15 @@ class HomePage extends StatelessWidget {
                         icon: Icons.assignment_outlined,
                         color: Color(0xFFF59E0B)),
                     const SizedBox(width: 12),
-                    Expanded(
-                        child: Text(item.title,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.w800, fontSize: 16))),
+                    Text(item.subject,
+                        style:
+                            const TextStyle(color: secondaryText, fontSize: 12))
                   ]),
-                  const SizedBox(height: 10),
-                  Text(item.subject,
-                      style:
-                          const TextStyle(color: secondaryText, fontSize: 12)),
                   const Spacer(),
+                  Text(item.title,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w800, fontSize: 16)),
+                  const SizedBox(height: 6),
                   Text(item.due,
                       style:
                           const TextStyle(color: secondaryText, fontSize: 12)),
@@ -116,12 +115,14 @@ class HomePage extends StatelessWidget {
               Expanded(
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                     Text(item.title,
                         style: const TextStyle(fontWeight: FontWeight.w800)),
                     const SizedBox(height: 7),
                     Text('${item.subject} • ${item.type}',
-                        style: const TextStyle(color: secondaryText))
+                        style: const TextStyle(
+                            color: secondaryText, fontSize: 12)),
                   ])),
             ])),
           ),

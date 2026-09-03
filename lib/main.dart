@@ -204,22 +204,34 @@ class _CarouselSectionState<T> extends State<CarouselSection<T>> {
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      SectionTitle(widget.title),
-      SizedBox(
-        height: 150,
-        child: PageView.builder(
-          controller: PageController(
-              viewportFraction: widget.items.length > 1 ? .88 : 1),
-          itemCount: widget.items.length,
-          onPageChanged: (value) => setState(() => page = value),
-          itemBuilder: (_, i) => Padding(
-              padding: const EdgeInsets.only(left: 8),
-              child: widget.builder(widget.items[i])),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+        child: Row(children: [
+          Text(widget.title, style: Theme.of(context).textTheme.titleLarge),
+          const Spacer(),
+          if (widget.items.length > 1)
+            Text('${page + 1} من ${widget.items.length}',
+                style: const TextStyle(color: secondaryText, fontSize: 11)),
+        ]),
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: SizedBox(
+          height: 138,
+          child: PageView.builder(
+            controller: PageController(
+                viewportFraction: widget.items.length > 1 ? .9 : 1),
+            itemCount: widget.items.length,
+            onPageChanged: (value) => setState(() => page = value),
+            itemBuilder: (_, i) => Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: widget.builder(widget.items[i])),
+          ),
         ),
       ),
       if (widget.items.length > 1)
         Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 12),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
